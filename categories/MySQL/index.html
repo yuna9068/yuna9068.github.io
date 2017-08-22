@@ -22,6 +22,8 @@
     
 
     
+        <link rel="icon" href="/images/favicon.png" />
+    
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/libs/titillium-web/styles.css">
@@ -142,17 +144,266 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2017/08/18/MySQL命令/" class="thumbnail">
+        <a href="/2017/08/22/MySQL-資料型態/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/18/MySQL命令/MySQL.jpg)" alt="MySQL命令" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/22/MySQL-資料型態/MySQLDataTypes.jpg)" alt="MySQL 資料型態" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/18/MySQL命令/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-資料型態/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+            </div>
+            <div class="date"><time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/22/MySQL-資料型態/">MySQL 資料型態</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+              
+基本資料型態◆文數字資料(Character Types)
+
+
+類型
+儲存方式
+儲存大小
+範圍
+
+
+
+
+CHAR(N)
+固定SIZE，不足部分以空白填入通常在CHAR(1)時使用
+字元數
+0~255
+
+
+VARCHER(N)
+變動SIZE一般都使用VARCHAR
+字元數+1byte
+0~255
+
+
+TINYBLOBBLOBMEDIUMBLOBLONGBLOB
+Binary不分大小寫
+L+1b
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg)" alt="MySQL 比較運算子/邏輯運算子/SQL特定運算子" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+            </div>
+            <div class="date"><time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/">MySQL 比較運算子/邏輯運算子/SQL特定運算子</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+              
+運算式中的運算元資料形態要相同
+運算子優先順序
+算數運算子(、/ 優先於 +、-； 與/ (或 +與- )同時出現時，由左至右)  
+串連運算子  
+比較運算子  
+IS NULL, LIKE, IN  
+BETWEEN  
+NOT  
+AND  
+OR使用()改變運算順序，也可讓運算式意義更清楚
+
+比較運算子比較運算子使用在兩個資料項的比較大小　　= 等於　　&gt;大於　　&gt;=大於
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/22/MySQL-NULL-VALUE空值/MySQLNullValue.jpg)" alt="MySQL NULL VALUE空值" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-NULL-VALUE空值/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+            </div>
+            <div class="date"><time datetime="2017-08-22T14:36:01.000Z" itemprop="datePublished">2017-08-22</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/22/MySQL-NULL-VALUE空值/">MySQL NULL VALUE空值</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+              
+NULL值是在新增資料時沒有設定欄位值，資料庫管理系統便設定該欄位的內容為NULL  
+
+無法使用  
+無法指派  
+無法運算  
+與0和空白不相同  
+所有型態皆可以為空值  
+運算式中若含有NULL VALUE時，其結果為NULL
+
+IFNULL() 函數IFNULL(expr1, expr2)expr1不是NULL，則回傳expr1；expr1是NULL，則回傳expr2範例：
+資料來
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg)" alt="MySQL SELECT資料查詢" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-SELECT資料查詢/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+            </div>
+            <div class="date"><time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/22/MySQL-SELECT資料查詢/">MySQL SELECT資料查詢</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+              
+
+SELECT：查詢的資料項目  
+FROM：資料來源  
+WHERE：篩選原始紀錄  
+GROUP BY：資料分組  
+HAVING：篩選分組資料  
+ORDER BY：資料排序  
+LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/08/18/MySQL-命令/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/18/MySQL-命令/MySQL.jpg)" alt="MySQL 命令" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/18/MySQL-命令/">0</span>
     
 </span>
 
@@ -170,7 +421,7 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/18/MySQL命令/">MySQL命令</a>
+        <a href="/2017/08/18/MySQL-命令/">MySQL 命令</a>
         </h1>
     
 
@@ -289,10 +540,10 @@ MySQL是關聯式資料庫管理系統(RDBMS)
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/18/MySQL命令/" class="thumbnail">
+                            <a href="/2017/08/22/MySQL-資料型態/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/18/MySQL命令/MySQL.jpg)" alt="MySQL命令" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/22/MySQL-資料型態/MySQLDataTypes.jpg)" alt="MySQL 資料型態" class="thumbnail-image"></span>
     
     
 </a>
@@ -301,18 +552,18 @@ MySQL是關聯式資料庫管理系統(RDBMS)
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/18/MySQL命令/" class="title">MySQL命令</a></p>
-                            <p class="item-date"><time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time></p>
+                            <p class="item-title"><a href="/2017/08/22/MySQL-資料型態/" class="title">MySQL 資料型態</a></p>
+                            <p class="item-date"><time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/18/About-MySQL/" class="thumbnail">
+                            <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/18/About-MySQL/MySQLLogo.png)" alt="About MySQL" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg)" alt="MySQL 比較運算子/邏輯運算子/SQL特定運算子" class="thumbnail-image"></span>
     
     
 </a>
@@ -321,8 +572,68 @@ MySQL是關聯式資料庫管理系統(RDBMS)
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/18/About-MySQL/" class="title">About MySQL</a></p>
-                            <p class="item-date"><time datetime="2017-08-18T11:47:21.000Z" itemprop="datePublished">2017-08-18</time></p>
+                            <p class="item-title"><a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="title">MySQL 比較運算子/邏輯運算子/SQL特定運算子</a></p>
+                            <p class="item-date"><time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/22/MySQL-NULL-VALUE空值/MySQLNullValue.jpg)" alt="MySQL NULL VALUE空值" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="title">MySQL NULL VALUE空值</a></p>
+                            <p class="item-date"><time datetime="2017-08-22T14:36:01.000Z" itemprop="datePublished">2017-08-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg)" alt="MySQL SELECT資料查詢" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/22/MySQL-SELECT資料查詢/" class="title">MySQL SELECT資料查詢</a></p>
+                            <p class="item-date"><time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/18/MySQL-命令/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/18/MySQL-命令/MySQL.jpg)" alt="MySQL 命令" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/18/MySQL-命令/" class="title">MySQL 命令</a></p>
+                            <p class="item-date"><time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time></p>
                         </div>
                     </li>
                 
@@ -335,7 +646,7 @@ MySQL是關聯式資料庫管理系統(RDBMS)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">6</span></li></ul>
         </div>
     </div>
 
@@ -345,7 +656,7 @@ MySQL是關聯式資料庫管理系統(RDBMS)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">記錄</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">6</span></li></ul>
         </div>
     </div>
 
@@ -355,7 +666,7 @@ MySQL是關聯式資料庫管理系統(RDBMS)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">6</span></li></ul>
         </div>
     </div>
 

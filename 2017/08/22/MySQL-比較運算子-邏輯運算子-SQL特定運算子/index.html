@@ -3,20 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>記錄 | 程式大作戰</title>
+    <title>MySQL 比較運算子/邏輯運算子/SQL特定運算子 | 程式大作戰</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="程式學習筆記 及 【國立臺北科技大學 Java &amp; Android 程式設計人才養成班】重點整理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="程式大作戰">
-<meta property="og:url" content="http://yuna9068.github.io/archives/index.html">
+        <meta name="keywords" content="MySQL,臺北科大Java" />
+    
+    <meta name="description" content="運算式中的運算元資料形態要相同 運算子優先順序 算數運算子(、/ 優先於 +、-； 與/ (或 +與- )同時出現時，由左至右)   串連運算子   比較運算子   IS NULL, LIKE, IN   BETWEEN   NOT   AND   OR使用()改變運算順序，也可讓運算式意義更清楚  比較運算子比較運算子使用在兩個資料項的比較大小　　= 等於　　&amp;gt;大於　　&amp;gt;=大於">
+<meta name="keywords" content="MySQL,臺北科大Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 比較運算子&#x2F;邏輯運算子&#x2F;SQL特定運算子">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/index.html">
 <meta property="og:site_name" content="程式大作戰">
-<meta property="og:description" content="程式學習筆記 及 【國立臺北科技大學 Java &amp; Android 程式設計人才養成班】重點整理">
+<meta property="og:description" content="運算式中的運算元資料形態要相同 運算子優先順序 算數運算子(、/ 優先於 +、-； 與/ (或 +與- )同時出現時，由左至右)   串連運算子   比較運算子   IS NULL, LIKE, IN   BETWEEN   NOT   AND   OR使用()改變運算順序，也可讓運算式意義更清楚  比較運算子比較運算子使用在兩個資料項的比較大小　　= 等於　　&amp;gt;大於　　&amp;gt;=大於">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg">
+<meta property="og:updated_time" content="2017-08-22T15:02:35.227Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程式大作戰">
-<meta name="twitter:description" content="程式學習筆記 及 【國立臺北科技大學 Java &amp; Android 程式設計人才養成班】重點整理">
+<meta name="twitter:title" content="MySQL 比較運算子&#x2F;邏輯運算子&#x2F;SQL特定運算子">
+<meta name="twitter:description" content="運算式中的運算元資料形態要相同 運算子優先順序 算數運算子(、/ 優先於 +、-； 與/ (或 +與- )同時出現時，由左至右)   串連運算子   比較運算子   IS NULL, LIKE, IN   BETWEEN   NOT   AND   OR使用()改變運算順序，也可讓運算式意義更清楚  比較運算子比較運算子使用在兩個資料項的比較大小　　= 等於　　&amp;gt;大於　　&amp;gt;=大於">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg">
     
 
     
@@ -121,391 +127,145 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>記錄
+    <a class="page-title-link" href="/categories/MySQL/">MySQL</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-MySQL-比較運算子-邏輯運算子-SQL特定運算子" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/22/MySQL-資料型態/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2017/08/22/MySQL-資料型態/MySQLDataTypes.jpg)" alt="MySQL 資料型態" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-資料型態/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-            </div>
-            <div class="date"><time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/22/MySQL-資料型態/">MySQL 資料型態</a>
+        MySQL 比較運算子/邏輯運算子/SQL特定運算子
         </h1>
     
 
-        <p class="article-excerpt">
-              
-基本資料型態◆文數字資料(Character Types)
-
-
-類型
-儲存方式
-儲存大小
-範圍
-
-
-
-
-CHAR(N)
-固定SIZE，不足部分以空白填入通常在CHAR(1)時使用
-字元數
-0~255
-
-
-VARCHER(N)
-變動SIZE一般都使用VARCHAR
-字元數+1byte
-0~255
-
-
-TINYBLOBBLOBMEDIUMBLOBLONGBLOB
-Binary不分大小寫
-L+1b
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="article-date">
+            <time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg)" alt="MySQL 比較運算子/邏輯運算子/SQL特定運算子" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/">0</span>
-    
-</span>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/臺北科大Java/">臺北科大Java</a>
+    </div>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
             </div>
-            <div class="date"><time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/">MySQL 比較運算子/邏輯運算子/SQL特定運算子</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg" alt="MySQL Operators" title="MySQL Operators">  
+<p>運算式中的運算元資料形態要相同<br><br></p>
+<h3 id="運算子優先順序"><a href="#運算子優先順序" class="headerlink" title="運算子優先順序"></a>運算子優先順序</h3><ol>
+<li>算數運算子(<em>、/ 優先於 +、-； </em>與/ (或 +與- )同時出現時，由左至右)  </li>
+<li>串連運算子  </li>
+<li>比較運算子  </li>
+<li>IS NULL, LIKE, IN  </li>
+<li>BETWEEN  </li>
+<li>NOT  </li>
+<li>AND  </li>
+<li>OR<br><strong>使用()改變運算順序，也可讓運算式意義更清楚</strong><br><br></li>
+</ol>
+<h3 id="比較運算子"><a href="#比較運算子" class="headerlink" title="比較運算子"></a>比較運算子</h3><p>比較運算子使用在兩個資料項的比較大小<br>　　= 等於　　&gt;大於　　&gt;=大於或等於　　&lt;小於　　&lt;=小於或等於　　&lt;&gt;不等於<br>　　<strong>不能寫 100&lt;=X&lt;=200 ，要寫成 X&gt;=100 AND X&lt;=200</strong>  </p>
+<ul>
+<li>數值資料：值  </li>
+<li>字串資料：內碼(預設)英文→ASCII(第一碼0)；中文→BIG5(第一碼1)<br>　　　　　中文&gt;英文小寫&gt;英文大寫&gt;阿拉伯數字<br>　　　　　比第一個字即可，若第一個字相同則比下一個字  </li>
+<li>日期時間資料：世紀、年、月、日、時、分、秒<br><br></li>
+</ul>
+<h3 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h3><p>若有一個以上的條件運算必須使用邏輯運算子結合成一個運算結果<br>　　AND　　OR　　NOT<br><br></p>
+<h3 id="SQL特定運算子"><a href="#SQL特定運算子" class="headerlink" title="SQL特定運算子"></a>SQL特定運算子</h3><ul>
+<li>BETWEEN：連續區間值的查詢，值由小→大，不可以大→小<br>　　　　　　可使用在數值、日期、字元<br>　　　　　　WHERE sal &gt;= 800 AND sal &lt;= 1000 → WHERE BETWEEN 800 AND 1000  </li>
+<li>IN：列舉值的查詢<br>　　可使用在數值、日期、字元<br>　　WHERE sal = 800 OR sal = 900 OR sal = 1000 → WHERE sal IN(800, 900, 1000)  </li>
+<li>LIKE：萬用字元的查詢<br>　　　%任意字元　　_一個字元<br>　　　WHERE name LIKE ‘A%’→A開頭<br>　　　WHERE name LIKE ‘%A’→A結尾<br>　　　WHERE name LIKE ‘%A%’→含有A<br>　　　WHERE name LIKE ‘__A%’→第三個字是A  </li>
+</ul>
+<p>　　　若要搜尋3% → LIKE ESCAPE →<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WHERE content LIKE &apos;%3&amp;%%&apos; ESCAPE &apos;&amp;&apos;;</div></pre></td></tr></table></figure></p>
+<p>　　　ESCAPE ‘&amp;’跳脫符號，取消符號後方字元的特殊性，符號自訂，例：&amp;、\、*  </p>
+<ul>
+<li>ISNULL：空值(NULL)的查詢<br>　　　　  WHERE sal IS NULL(不可以寫成sal=NULL)<br><br></li>
+</ul>
+<p><em>資料來源：李志賢老師上課講義</em></p>
 
-        <p class="article-excerpt">
-              
-運算式中的運算元資料形態要相同
-運算子優先順序
-算數運算子(、/ 優先於 +、-； 與/ (或 +與- )同時出現時，由左至右)  
-串連運算子  
-比較運算子  
-IS NULL, LIKE, IN  
-BETWEEN  
-NOT  
-AND  
-OR使用()改變運算順序，也可讓運算式意義更清楚
+        </div>
+        <footer class="article-footer">
+            
 
-比較運算子比較運算子使用在兩個資料項的比較大小　　= 等於　　&gt;大於　　&gt;=大於
-        </p>
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2017/08/22/MySQL-NULL-VALUE空值/MySQLNullValue.jpg)" alt="MySQL NULL VALUE空值" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-NULL-VALUE空值/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-            </div>
-            <div class="date"><time datetime="2017-08-22T14:36:01.000Z" itemprop="datePublished">2017-08-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/22/MySQL-NULL-VALUE空值/">MySQL NULL VALUE空值</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-              
-NULL值是在新增資料時沒有設定欄位值，資料庫管理系統便設定該欄位的內容為NULL  
-
-無法使用  
-無法指派  
-無法運算  
-與0和空白不相同  
-所有型態皆可以為空值  
-運算式中若含有NULL VALUE時，其結果為NULL
-
-IFNULL() 函數IFNULL(expr1, expr2)expr1不是NULL，則回傳expr1；expr1是NULL，則回傳expr2範例：
-資料來
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg)" alt="MySQL SELECT資料查詢" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/22/MySQL-SELECT資料查詢/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-            </div>
-            <div class="date"><time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/22/MySQL-SELECT資料查詢/">MySQL SELECT資料查詢</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-              
-
-SELECT：查詢的資料項目  
-FROM：資料來源  
-WHERE：篩選原始紀錄  
-GROUP BY：資料分組  
-HAVING：篩選分組資料  
-ORDER BY：資料排序  
-LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/18/MySQL-命令/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2017/08/18/MySQL-命令/MySQL.jpg)" alt="MySQL 命令" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/18/MySQL-命令/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-            </div>
-            <div class="date"><time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/18/MySQL-命令/">MySQL 命令</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-              
-SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;
-
-CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;
-
-USE 資料庫名稱指定預設存取的資料庫1USE mydb;
-
-SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql
-
-SHO
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/18/About-MySQL/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2017/08/18/About-MySQL/MySQLLogo.png)" alt="About MySQL" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yuna9068.github.io/2017/08/18/About-MySQL/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-            </div>
-            <div class="date"><time datetime="2017-08-18T11:47:21.000Z" itemprop="datePublished">2017-08-18</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/18/About-MySQL/">About MySQL</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-              
-MySQL是關聯式資料庫管理系統(RDBMS)  
-特色
-開放原始碼(Community Server)  
-速度快、可靠、易於使用、成本低  
-主從式架構  
-網路上有許多相關軟體  
-多語言支援  
-規模小，功能有限，適用於個人使用者及中小型企業  
-開放資源→舊版可用的指令不一定能在新版上運作  
-支援多執行緒，充分利用CPU資源，支援多用戶
-
-撰寫SQL命令
-指令不分大小寫  
-敘述
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -526,6 +286,29 @@ MySQL是關聯式資料庫管理系統(RDBMS)
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/08/22/MySQL-資料型態/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            MySQL 資料型態
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/08/22/MySQL-NULL-VALUE空值/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">MySQL NULL VALUE空值</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -723,11 +506,13 @@ MySQL是關聯式資料庫管理系統(RDBMS)
     var disqus_shortname = 'code-wars';
     
     
+    var disqus_url = 'http://yuna9068.github.io/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
