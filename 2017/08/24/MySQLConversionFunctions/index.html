@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MySQL 函數 4.資料型態轉換函數 | 程式大作戰</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="MySQL,臺北科大Java" />
+    
+    <meta name="description" content="* CONVERT(expr, type) 其他DB也是用CONVERT* CAST(expr AS type)type  BINARY[(N)]   CHAR[(N)]   DATE   DATETIME   DECIMAL[(M[,D])]   JSON (added in MySQL 5.7.8)   NCHAR[(N)]   SIGNED [INTEGER]   TIME   UNS">
+<meta name="keywords" content="MySQL,臺北科大Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 函數 4.資料型態轉換函數">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/24/MySQLConversionFunctions/index.html">
+<meta property="og:site_name" content="程式大作戰">
+<meta property="og:description" content="* CONVERT(expr, type) 其他DB也是用CONVERT* CAST(expr AS type)type  BINARY[(N)]   CHAR[(N)]   DATE   DATETIME   DECIMAL[(M[,D])]   JSON (added in MySQL 5.7.8)   NCHAR[(N)]   SIGNED [INTEGER]   TIME   UNS">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/24/MySQLConversionFunctions/convertAndCast.png">
+<meta property="og:updated_time" content="2017-08-26T09:58:01.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 函數 4.資料型態轉換函數">
+<meta name="twitter:description" content="* CONVERT(expr, type) 其他DB也是用CONVERT* CAST(expr AS type)type  BINARY[(N)]   CHAR[(N)]   DATE   DATETIME   DECIMAL[(M[,D])]   JSON (added in MySQL 5.7.8)   NCHAR[(N)]   SIGNED [INTEGER]   TIME   UNS">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/24/MySQLConversionFunctions/convertAndCast.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/MySQL/">MySQL</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(休息,食記...)" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/MySQL/">MySQL</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-MySQLConversionFunctions" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MySQL 函數 4.資料型態轉換函數
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/24/MySQLConversionFunctions/" class="article-date">
+            <time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/臺北科大Java/">臺北科大Java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/2017/08/24/MySQLConversionFunctions/convertAndCast.png" alt="CONVERT() & CAST()" title="CONVERT() & CAST()">  
+<h6 id="CONVERT-expr-type-其他DB也是用CONVERT"><a href="#CONVERT-expr-type-其他DB也是用CONVERT" class="headerlink" title="* CONVERT(expr, type) 其他DB也是用CONVERT"></a>* CONVERT(expr, type) 其他DB也是用CONVERT</h6><h6 id="CAST-expr-AS-type"><a href="#CAST-expr-AS-type" class="headerlink" title="* CAST(expr AS type)"></a>* CAST(expr AS type)</h6><p><strong>type</strong></p>
+<ul>
+<li>BINARY[(N)]  </li>
+<li>CHAR[(N)]  </li>
+<li>DATE  </li>
+<li>DATETIME  </li>
+<li>DECIMAL[(M[,D])]  </li>
+<li>JSON (added in MySQL 5.7.8)  </li>
+<li>NCHAR[(N)]  </li>
+<li>SIGNED [INTEGER]  </li>
+<li>TIME  </li>
+<li>UNSIGNED [INTEGER]<br><br></li>
+</ul>
+<p><em>資料來源：李志賢老師上課講義、<a href="https://dev.mysql.com/doc/refman/5.7/en/cast-functions.html" target="_blank" rel="external">MySQL 5.7 Reference Manual / Functions and Operators / Cast Functions and Operators</a></em></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>追隨 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/yuna9068" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/08/24/MySQLGeneralFunctions/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            MySQL 函數 5.通用函數
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/08/24/MySQLDateAndTimeFunctions/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">MySQL 函數 3.日期/時間函數</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLGeneralFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLGeneralFunctions/MySQLGeneralFunctions.jpg)" alt="MySQL 函數 5.通用函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLGeneralFunctions/" class="title">MySQL 函數 5.通用函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:31.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLConversionFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLConversionFunctions/convertAndCast.png)" alt="MySQL 函數 4.資料型態轉換函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLConversionFunctions/" class="title">MySQL 函數 4.資料型態轉換函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLDateAndTimeFunctions/MySQLDateAndTimeFunctions.jpg)" alt="MySQL 函數 3.日期/時間函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="title">MySQL 函數 3.日期/時間函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:00:37.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLNumericFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg)" alt="MySQL 函數 2.數值函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLNumericFunctions/" class="title">MySQL 函數 2.數值函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLStringFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg)" alt="MySQL 函數 1.字串函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLStringFunctions/" class="title">MySQL 函數 1.字串函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/臺北科大Java/" style="font-size: 10px;">臺北科大Java</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Yuna</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'code-wars';
+    
+    
+    var disqus_url = 'http://yuna9068.github.io/2017/08/24/MySQLConversionFunctions/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

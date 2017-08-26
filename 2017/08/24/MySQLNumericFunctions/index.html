@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>About MySQL | 程式大作戰</title>
+    <title>MySQL 函數 2.數值函數 | 程式大作戰</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="MySQL,臺北科大Java" />
     
-    <meta name="description" content="MySQL是關聯式資料庫管理系統(RDBMS)   特色 開放原始碼(Community Server)   速度快、可靠、易於使用、成本低   主從式架構   網路上有許多相關軟體   多語言支援   規模小，功能有限，適用於個人使用者及中小型企業   開放資源→舊版可用的指令不一定能在新版上運作   支援多執行緒，充分利用CPU資源，支援多用戶  撰寫SQL命令 指令不分大小寫   敘述">
+    <meta name="description" content="函數 功能     ABS(X) 絕對值   ACOS()    ASIN()    ATAN()    ATAN2(), ATAN()    CEIL(X) 傳回不小於X的最小整數值例：CEIL(2.35) → 3例：CEIL(-2.35) → -2   CEILING()    CONV()    COS()    COT()    CRC32()    DEGREES(X) 徑值">
 <meta name="keywords" content="MySQL,臺北科大Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About MySQL">
-<meta property="og:url" content="http://yuna9068.github.io/2017/08/18/About-MySQL/index.html">
+<meta property="og:title" content="MySQL 函數 2.數值函數">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/24/MySQLNumericFunctions/index.html">
 <meta property="og:site_name" content="程式大作戰">
-<meta property="og:description" content="MySQL是關聯式資料庫管理系統(RDBMS)   特色 開放原始碼(Community Server)   速度快、可靠、易於使用、成本低   主從式架構   網路上有許多相關軟體   多語言支援   規模小，功能有限，適用於個人使用者及中小型企業   開放資源→舊版可用的指令不一定能在新版上運作   支援多執行緒，充分利用CPU資源，支援多用戶  撰寫SQL命令 指令不分大小寫   敘述">
+<meta property="og:description" content="函數 功能     ABS(X) 絕對值   ACOS()    ASIN()    ATAN()    ATAN2(), ATAN()    CEIL(X) 傳回不小於X的最小整數值例：CEIL(2.35) → 3例：CEIL(-2.35) → -2   CEILING()    CONV()    COS()    COT()    CRC32()    DEGREES(X) 徑值">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="http://yuna9068.github.io/2017/08/18/About-MySQL/MySQLLogo.png">
-<meta property="og:updated_time" content="2017-08-18T15:40:39.520Z">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg">
+<meta property="og:updated_time" content="2017-08-25T10:02:38.675Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About MySQL">
-<meta name="twitter:description" content="MySQL是關聯式資料庫管理系統(RDBMS)   特色 開放原始碼(Community Server)   速度快、可靠、易於使用、成本低   主從式架構   網路上有許多相關軟體   多語言支援   規模小，功能有限，適用於個人使用者及中小型企業   開放資源→舊版可用的指令不一定能在新版上運作   支援多執行緒，充分利用CPU資源，支援多用戶  撰寫SQL命令 指令不分大小寫   敘述">
-<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/18/About-MySQL/MySQLLogo.png">
+<meta name="twitter:title" content="MySQL 函數 2.數值函數">
+<meta name="twitter:description" content="函數 功能     ABS(X) 絕對值   ACOS()    ASIN()    ATAN()    ATAN2(), ATAN()    CEIL(X) 傳回不小於X的最小整數值例：CEIL(2.35) → 3例：CEIL(-2.35) → -2   CEILING()    CONV()    COS()    COT()    CRC32()    DEGREES(X) 徑值">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg">
     
 
     
@@ -131,14 +131,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-About-MySQL" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-MySQLNumericFunctions" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        About MySQL
+        MySQL 函數 2.數值函數
         </h1>
     
 
@@ -148,8 +148,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/08/18/About-MySQL/" class="article-date">
-            <time datetime="2017-08-18T11:47:21.000Z" itemprop="datePublished">2017-08-18</time>
+        <a href="/2017/08/24/MySQLNumericFunctions/" class="article-date">
+            <time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time>
         </a>
     </div>
 
@@ -163,28 +163,166 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/2017/08/18/About-MySQL/MySQLLogo.png" alt="MySQL Logo" title="MySQL Logo">  
-<p>MySQL是關聯式資料庫管理系統(RDBMS)  </p>
-<h3 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h3><ol>
-<li>開放原始碼(Community Server)  </li>
-<li>速度快、可靠、易於使用、成本低  </li>
-<li>主從式架構  </li>
-<li>網路上有許多相關軟體  </li>
-<li>多語言支援  </li>
-<li>規模小，功能有限，適用於個人使用者及中小型企業  </li>
-<li>開放資源→舊版可用的指令不一定能在新版上運作  </li>
-<li>支援多執行緒，充分利用CPU資源，支援多用戶<br><br></li>
-</ol>
-<h3 id="撰寫SQL命令"><a href="#撰寫SQL命令" class="headerlink" title="撰寫SQL命令"></a>撰寫SQL命令</h3><ol>
-<li>指令不分大小寫  </li>
-<li>敘述可寫成多行，習慣上每個子句以一行表示，但Keywords不可分割成多行  </li>
-<li>以分號；作為敘述的結束符號並執行該敘述<br><br></li>
-</ol>
-<h3 id="SQL語言的分類"><a href="#SQL語言的分類" class="headerlink" title="SQL語言的分類"></a>SQL語言的分類</h3><h6 id="資料查詢"><a href="#資料查詢" class="headerlink" title="資料查詢"></a>資料查詢</h6><p>SELECT：查詢資料庫中表格的資料<br><br></p>
-<h6 id="資料操作語言-DML：Data-Manipulation-Language"><a href="#資料操作語言-DML：Data-Manipulation-Language" class="headerlink" title="資料操作語言(DML：Data Manipulation Language)"></a>資料操作語言(DML：Data Manipulation Language)</h6><p>INSERT：可新增資料庫表格內的資料<br>UPDATE：可更新資料庫表格內的資料<br>DELETE：可刪除資料庫表格內的資料<br><br></p>
-<h6 id="資料定義語言-DDL：Data-Definition-Language"><a href="#資料定義語言-DDL：Data-Definition-Language" class="headerlink" title="資料定義語言(DDL：Data Definition Language)"></a>資料定義語言(DDL：Data Definition Language)</h6><p>CREATE：可建立資料庫中的物件<br>ALTER：可變更資料庫中物件的結構<br>DROP：可刪除資料庫中的物件<br>RENAME：可變更資料庫中的物件名稱<br>TRUNCATE：清除資料庫中表格內的資料<br><br></p>
-<h6 id="資料控制語言-DCL：Data-Control-Language"><a href="#資料控制語言-DCL：Data-Control-Language" class="headerlink" title="資料控制語言(DCL：Data Control Language)"></a>資料控制語言(DCL：Data Control Language)</h6><p>GRANT：授予權限<br>REVOKE：除移權限<br><br></p>
-<p><em>資料來源：李志賢老師上課講義、<a href="https://zh.wikipedia.org/wiki/MySQL" target="_blank" rel="external">Wikipedia_MySQL</a></em></p>
+            <img src="/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg" alt="MySQL Numeric Functions" title="MySQL Numeric Functions">  
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函數</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ABS(<em>X</em>)</td>
+<td style="text-align:left">絕對值</td>
+</tr>
+<tr>
+<td style="text-align:left">ACOS()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ASIN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ATAN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ATAN2(), ATAN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CEIL(<em>X</em>)</td>
+<td style="text-align:left">傳回不小於X的最小整數值<br>例：CEIL(2.35) → 3<br>例：CEIL(-2.35) → -2</td>
+</tr>
+<tr>
+<td style="text-align:left">CEILING()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CONV()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">COS()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">COT()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CRC32()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">DEGREES(<em>X</em>)</td>
+<td style="text-align:left">徑值轉度數</td>
+</tr>
+<tr>
+<td style="text-align:left">DIV</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">/</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">EXP()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">FLOOR(<em>X</em>)</td>
+<td style="text-align:left">傳回不大於X的最大整數值</td>
+</tr>
+<tr>
+<td style="text-align:left">LN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">LOG()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">LOG10()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">LOG2()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">MOD(<em>N, M</em>)</td>
+<td style="text-align:left">求餘數</td>
+</tr>
+<tr>
+<td style="text-align:left">%, MOD</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">PI()</td>
+<td style="text-align:left">圓周率</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">POW()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">POWER(<em>X, Y</em>)</td>
+<td style="text-align:left">X的Y次方<br>例：POWER(2, 10) → 2的10次方</td>
+</tr>
+<tr>
+<td style="text-align:left">RADIANS(<em>X</em>)</td>
+<td style="text-align:left">度數轉徑值</td>
+</tr>
+<tr>
+<td style="text-align:left">RAND(<em>N</em>)</td>
+<td style="text-align:left">亂數(0~N)，N未填則為1</td>
+</tr>
+<tr>
+<td style="text-align:left">ROUND(<em>X, D</em>)</td>
+<td style="text-align:left">四捨五入，D未填則為0<br>例：ROUND(1234.5678, 2) → 1234.57<br>例：ROUND(1234.5678) → 1235<br>例：ROUND(1234.5678, -2) → 1200<br>例：ROUND(1234.5678, -4) → 0</td>
+</tr>
+<tr>
+<td style="text-align:left">SIGN(<em>X</em>)</td>
+<td style="text-align:left">正負數</td>
+</tr>
+<tr>
+<td style="text-align:left">SIN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">SQRT(<em>X</em>)</td>
+<td style="text-align:left">平方根</td>
+</tr>
+<tr>
+<td style="text-align:left">TAN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">TRUNCATE(<em>X, D</em>)</td>
+<td style="text-align:left">無條件捨去，D一定要填<br>例：TRUNCATE(1234.5678, 2) → 1234.56<br>例：TRUNCATE(1234.5678) → ERROR<br>例：TRUNCATE(1234.5678, -2) → 1200<br>例：TRUNCATE(1234.5678, -4) → 0</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><em>資料來源：李志賢老師上課講義、<a href="https://dev.mysql.com/doc/refman/5.7/en/numeric-functions.html" target="_blank" rel="external">MySQL 5.7 Reference Manual / Functions and Operators / Numeric Functions and Operators</a></em></p>
 
         </div>
         <footer class="article-footer">
@@ -282,16 +420,22 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/08/18/MySQL-命令/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/08/24/MySQLDateAndTimeFunctions/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            MySQL 命令
+            MySQL 函數 3.日期/時間函數
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
+    
+        <a href="/2017/08/24/MySQLStringFunctions/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">MySQL 函數 1.字串函數</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -308,10 +452,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-資料型態/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLGeneralFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-資料型態/MySQLDataTypes.jpg)" alt="MySQL 資料型態" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLGeneralFunctions/MySQLGeneralFunctions.jpg)" alt="MySQL 函數 5.通用函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -320,18 +464,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-資料型態/" class="title">MySQL 資料型態</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLGeneralFunctions/" class="title">MySQL 函數 5.通用函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:31.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLConversionFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg)" alt="MySQL 比較運算子/邏輯運算子/SQL特定運算子" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLConversionFunctions/convertAndCast.png)" alt="MySQL 函數 4.資料型態轉換函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -340,18 +484,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="title">MySQL 比較運算子/邏輯運算子/SQL特定運算子</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLConversionFunctions/" class="title">MySQL 函數 4.資料型態轉換函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-NULL-VALUE空值/MySQLNullValue.jpg)" alt="MySQL NULL VALUE空值" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLDateAndTimeFunctions/MySQLDateAndTimeFunctions.jpg)" alt="MySQL 函數 3.日期/時間函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -360,18 +504,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="title">MySQL NULL VALUE空值</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:36:01.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="title">MySQL 函數 3.日期/時間函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:00:37.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLNumericFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg)" alt="MySQL SELECT資料查詢" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg)" alt="MySQL 函數 2.數值函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -380,18 +524,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-SELECT資料查詢/" class="title">MySQL SELECT資料查詢</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLNumericFunctions/" class="title">MySQL 函數 2.數值函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/18/MySQL-命令/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLStringFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/18/MySQL-命令/MySQL.jpg)" alt="MySQL 命令" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg)" alt="MySQL 函數 1.字串函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -400,8 +544,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/18/MySQL-命令/" class="title">MySQL 命令</a></p>
-                            <p class="item-date"><time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLStringFunctions/" class="title">MySQL 函數 1.字串函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
@@ -414,7 +558,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">6</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -424,7 +568,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">記錄</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">6</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -434,7 +578,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -492,7 +636,7 @@
     var disqus_shortname = 'code-wars';
     
     
-    var disqus_url = 'http://yuna9068.github.io/2017/08/18/About-MySQL/';
+    var disqus_url = 'http://yuna9068.github.io/2017/08/24/MySQLNumericFunctions/';
     
     (function() {
     var dsq = document.createElement('script');

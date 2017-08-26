@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>MySQL SELECT資料查詢 | 程式大作戰</title>
+    <title>MySQL 命令 | 程式大作戰</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="MySQL,臺北科大Java" />
     
-    <meta name="description" content="SELECT：查詢的資料項目   FROM：資料來源   WHERE：篩選原始紀錄   GROUP BY：資料分組   HAVING：篩選分組資料   ORDER BY：資料排序   LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV">
+    <meta name="description" content="SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;  CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;  USE 資料庫名稱指定預設存取的資料庫1USE mydb;  SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql  SHO">
 <meta name="keywords" content="MySQL,臺北科大Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL SELECT資料查詢">
-<meta property="og:url" content="http://yuna9068.github.io/2017/08/22/MySQL-SELECT資料查詢/index.html">
+<meta property="og:title" content="MySQL 命令">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/18/MySQLStatements/index.html">
 <meta property="og:site_name" content="程式大作戰">
-<meta property="og:description" content="SELECT：查詢的資料項目   FROM：資料來源   WHERE：篩選原始紀錄   GROUP BY：資料分組   HAVING：篩選分組資料   ORDER BY：資料排序   LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV">
+<meta property="og:description" content="SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;  CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;  USE 資料庫名稱指定預設存取的資料庫1USE mydb;  SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql  SHO">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="http://yuna9068.github.io/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg">
-<meta property="og:updated_time" content="2017-08-22T14:33:06.076Z">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/18/MySQLStatements/MySQL.jpg">
+<meta property="og:updated_time" content="2017-08-22T16:13:48.690Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL SELECT資料查詢">
-<meta name="twitter:description" content="SELECT：查詢的資料項目   FROM：資料來源   WHERE：篩選原始紀錄   GROUP BY：資料分組   HAVING：篩選分組資料   ORDER BY：資料排序   LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV">
-<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg">
+<meta name="twitter:title" content="MySQL 命令">
+<meta name="twitter:description" content="SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;  CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;  USE 資料庫名稱指定預設存取的資料庫1USE mydb;  SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql  SHO">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/18/MySQLStatements/MySQL.jpg">
     
 
     
@@ -131,14 +131,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-MySQL-SELECT資料查詢" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-MySQLStatements" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        MySQL SELECT資料查詢
+        MySQL 命令
         </h1>
     
 
@@ -148,8 +148,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="article-date">
-            <time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time>
+        <a href="/2017/08/18/MySQLStatements/" class="article-date">
+            <time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time>
         </a>
     </div>
 
@@ -163,32 +163,21 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg" alt="MySQL SELECT" title="MySQL SELECT">  
-<ul>
-<li>SELECT：查詢的資料項目  </li>
-<li>FROM：資料來源  </li>
-<li>WHERE：篩選原始紀錄  </li>
-<li>GROUP BY：資料分組  </li>
-<li>HAVING：篩選分組資料  </li>
-<li>ORDER BY：資料排序  </li>
-<li>LIMIT：傳回資料筆數，只有MySQL才有<br><br><br>撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT<br>執行順序：FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY→LIMIT<br><br></li>
-</ul>
-<h3 id="簡單查詢"><a href="#簡單查詢" class="headerlink" title="簡單查詢"></a>簡單查詢</h3><p><strong>SELECT * FROM 資料表名稱</strong><br>選取資料表中的所有欄位資料，欄位大小寫依DESC命令所見為準<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM emp;</div></pre></td></tr></table></figure></p>
+            <img src="/2017/08/18/MySQLStatements/MySQL.jpg" alt="MySQL" title="MySQL">  
+<p><strong>SHOW DATABASES</strong><br>查詢目前伺服器現存的所有資料庫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SHOW DATABASES;</div></pre></td></tr></table></figure></p>
 <p><br></p>
-<p><strong>SELECT 欄位 FROM 資料表名稱</strong><br>選取指定欄位資料，多項欄位以,區隔，欄位大(小)寫則結果顯示大(小)寫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT EMPNO,ename FROM emp;</div></pre></td></tr></table></figure></p>
-<p>設定欄位別名→使用’ ‘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT empno &apos;編號&apos;, ename &apos;NAME&apos; FROM emp;</div></pre></td></tr></table></figure></p>
-<p>字串連結→使用CONCAT(1, 2, 3, ⋯⋯)，以,分隔，若要加符號/字，要加上’ ‘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT CONCAT(ename, &apos;,&apos;, job) FROM emp;　→顯示 Amy,Salesman</div></pre></td></tr></table></figure></p>
-<p>排除重複資料列，使重複資料只出現一次→使用DISTINCT 欄位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT job FROM emp;</div></pre></td></tr></table></figure></p>
+<p><strong>CREATE DATABASE 資料庫名稱</strong><br>建立一個新的資料庫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE mydb;</div></pre></td></tr></table></figure></p>
 <p><br></p>
-<h3 id="設定查詢條件"><a href="#設定查詢條件" class="headerlink" title="設定查詢條件"></a>設定查詢條件</h3><p><strong>WHERE 條件子句/比較運算式/邏輯運算式/SQL特定運算式</strong><br>依查詢條件篩選符合條件的資料列<br><br></p>
-<h3 id="資料分組"><a href="#資料分組" class="headerlink" title="資料分組"></a>資料分組</h3><p><strong>GROUP BY 資料項</strong><br>將表格中的紀錄依資料項的相同內容分為一個群組，並以資料項為排序(ASC)的依據<br><br></p>
-<p><strong>HAVING</strong><br>設定條件來篩選回傳的分組資料<br><br></p>
-<h3 id="資料排序"><a href="#資料排序" class="headerlink" title="資料排序"></a>資料排序</h3><p><strong>ORDER BY 欄位/別名/運算式/位置 ASC(升冪，預設，可不打)/DESC(降冪)</strong><br>依指定欄位或運算式的資料值來排序，可以使用多個資料項排序<br>位置→依資料項在list中的位置順序，若超出欄位總數會出現ERROR<br>範例：<img src="orderBy.png" alt=""><br><br></p>
-<p><strong>LIMIT offset, count</strong><br>設定查詢結果傳回的資料筆數，若只有一個整數→count<br>offset：傳回資料的開始位置，由0起算，&gt;=0；可以把它想成要略過筆數<br>count：傳回最大的資料筆數<br>範例：<img src="limit1.png" alt=""> 從位置3開始傳回5筆資料→ <img src="limit2.png" alt=""><br><br></p>
-<h3 id="CASE運算式"><a href="#CASE運算式" class="headerlink" title="CASE運算式"></a>CASE運算式</h3><p><strong>列舉式CASE(Simple CASE)</strong><br>與一串列舉的值做比較，傳回第一個值相等的回傳值<br>若都不相等則傳回ELSE的回傳值，若無給定ELSE則傳回NULL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT 顯示的欄位, </div><div class="line">　　　　CASE 欄位</div><div class="line">　　　　　　　WHEN v1 THEN r1</div><div class="line">　　　　　　　⋯⋯</div><div class="line">　　　　　　　ELSE r</div><div class="line">　　　　END 新欄位名稱</div><div class="line">FROM 資料表</div></pre></td></tr></table></figure></p>
-<p>範例：<img src="simpleCASE.png" alt=""><br><br></p>
-<p><strong>條件式CASE(Searched CASE)</strong><br>與一串列舉的條件做比較，傳回第一個條件運算結果=TRUE的回傳值<br>若都不相等則傳回ELSE的回傳值，若無給定ELSE則傳回NULL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT 顯示的欄位, </div><div class="line">　　　　CASE </div><div class="line">　　　　　　　WHEN 條件 THEN r1</div><div class="line">　　　　　　　⋯⋯</div><div class="line">　　　　　　　ELSE r</div><div class="line">　　　　END 新欄位名稱</div><div class="line">FROM 資料表</div></pre></td></tr></table></figure></p>
-<p>範例：<img src="searchedCASE.png" alt=""><br><br></p>
+<p><strong>USE 資料庫名稱</strong><br>指定預設存取的資料庫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">USE mydb;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><strong>SOURCE 路徑\檔案名稱</strong><br>執行一個SQL命令檔，路徑不要有中文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SOURCE D:\mysql_demobld.sql</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><strong>SHOW TABLES</strong><br>列出預設資料庫中所有資料表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SHOW TABLES;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><strong>DESCRIBE 資料庫名稱 / DESC 資料庫名稱</strong><br>列出指定資料表的欄位資訊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DESC dept;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><strong>TEE 路徑\檔案名稱</strong><br>留存執行結果，存成文字檔，結束留存時輸入NOTEE<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TEE D:\hw01</div></pre></td></tr></table></figure></p>
+<p><br></p>
 <p><em>資料來源：李志賢老師上課講義</em></p>
 
         </div>
@@ -287,20 +276,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/08/22/MySQL-NULL-VALUE空值/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/08/22/MySQLSelect/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            MySQL NULL VALUE空值
+            MySQL SELECT資料查詢
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2017/08/18/MySQL-命令/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/08/18/aboutMySQL/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">MySQL 命令</p>
+        <p class="article-nav-title">About MySQL</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -319,10 +308,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-資料型態/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLGeneralFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-資料型態/MySQLDataTypes.jpg)" alt="MySQL 資料型態" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLGeneralFunctions/MySQLGeneralFunctions.jpg)" alt="MySQL 函數 5.通用函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -331,18 +320,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-資料型態/" class="title">MySQL 資料型態</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLGeneralFunctions/" class="title">MySQL 函數 5.通用函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:31.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLConversionFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg)" alt="MySQL 比較運算子/邏輯運算子/SQL特定運算子" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLConversionFunctions/convertAndCast.png)" alt="MySQL 函數 4.資料型態轉換函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -351,18 +340,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="title">MySQL 比較運算子/邏輯運算子/SQL特定運算子</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLConversionFunctions/" class="title">MySQL 函數 4.資料型態轉換函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-NULL-VALUE空值/MySQLNullValue.jpg)" alt="MySQL NULL VALUE空值" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLDateAndTimeFunctions/MySQLDateAndTimeFunctions.jpg)" alt="MySQL 函數 3.日期/時間函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -371,18 +360,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="title">MySQL NULL VALUE空值</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:36:01.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="title">MySQL 函數 3.日期/時間函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:00:37.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLNumericFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg)" alt="MySQL SELECT資料查詢" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg)" alt="MySQL 函數 2.數值函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -391,18 +380,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-SELECT資料查詢/" class="title">MySQL SELECT資料查詢</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLNumericFunctions/" class="title">MySQL 函數 2.數值函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/18/MySQL-命令/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLStringFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/18/MySQL-命令/MySQL.jpg)" alt="MySQL 命令" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg)" alt="MySQL 函數 1.字串函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -411,8 +400,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/18/MySQL-命令/" class="title">MySQL 命令</a></p>
-                            <p class="item-date"><time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLStringFunctions/" class="title">MySQL 函數 1.字串函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
@@ -425,7 +414,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">6</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -435,7 +424,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">記錄</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">6</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -445,7 +434,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -503,7 +492,7 @@
     var disqus_shortname = 'code-wars';
     
     
-    var disqus_url = 'http://yuna9068.github.io/2017/08/22/MySQL-SELECT資料查詢/';
+    var disqus_url = 'http://yuna9068.github.io/2017/08/18/MySQLStatements/';
     
     (function() {
     var dsq = document.createElement('script');

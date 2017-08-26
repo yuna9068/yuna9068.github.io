@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MySQL SELECT資料查詢 | 程式大作戰</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="MySQL,臺北科大Java" />
+    
+    <meta name="description" content="SELECT：查詢的資料項目   FROM：資料來源   WHERE：篩選原始紀錄   GROUP BY：資料分組   HAVING：篩選分組資料   ORDER BY：資料排序   LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV">
+<meta name="keywords" content="MySQL,臺北科大Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL SELECT資料查詢">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/22/MySQLSelect/index.html">
+<meta property="og:site_name" content="程式大作戰">
+<meta property="og:description" content="SELECT：查詢的資料項目   FROM：資料來源   WHERE：篩選原始紀錄   GROUP BY：資料分組   HAVING：篩選分組資料   ORDER BY：資料排序   LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/22/MySQLSelect/MySQLSelect.jpg">
+<meta property="og:updated_time" content="2017-08-24T08:39:18.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL SELECT資料查詢">
+<meta name="twitter:description" content="SELECT：查詢的資料項目   FROM：資料來源   WHERE：篩選原始紀錄   GROUP BY：資料分組   HAVING：篩選分組資料   ORDER BY：資料排序   LIMIT：傳回資料筆數，只有MySQL才有撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT執行順序：FROM→WHERE→GROUP BY→HAV">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/22/MySQLSelect/MySQLSelect.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/MySQL/">MySQL</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(休息,食記...)" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/MySQL/">MySQL</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-MySQLSelect" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MySQL SELECT資料查詢
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/22/MySQLSelect/" class="article-date">
+            <time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/臺北科大Java/">臺北科大Java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/2017/08/22/MySQLSelect/MySQLSelect.jpg" alt="MySQL SELECT" title="MySQL SELECT">  
+<ul>
+<li>SELECT：查詢的資料項目  </li>
+<li>FROM：資料來源  </li>
+<li>WHERE：篩選原始紀錄  </li>
+<li>GROUP BY：資料分組  </li>
+<li>HAVING：篩選分組資料  </li>
+<li>ORDER BY：資料排序  </li>
+<li>LIMIT：傳回資料筆數，只有MySQL才有<br><br><br>撰寫順序：SELECT→FROM→WHERE→GROUP BY→HAVING→ ORDER BY→LIMIT<br>執行順序：FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY→LIMIT<br><br></li>
+</ul>
+<h3 id="簡單查詢"><a href="#簡單查詢" class="headerlink" title="簡單查詢"></a>簡單查詢</h3><p><strong>SELECT * FROM 資料表名稱</strong><br>選取資料表中的所有欄位資料，欄位大小寫依DESC命令所見為準<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM emp;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><strong>SELECT 欄位 FROM 資料表名稱</strong><br>選取指定欄位資料，多項欄位以,區隔，欄位大(小)寫則結果顯示大(小)寫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT EMPNO,ename FROM emp;</div></pre></td></tr></table></figure></p>
+<p>設定欄位別名→使用’ ‘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT empno &apos;編號&apos;, ename &apos;NAME&apos; FROM emp;</div></pre></td></tr></table></figure></p>
+<p>字串連結→使用CONCAT(1, 2, 3, ⋯⋯)，以,分隔，若要加符號或字串，要加上’ ‘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT DEPTNO, DNAME, LOC, CONCAT(DEPTNO, &apos; - &apos;, DNAME, &apos;, Loc: &apos;, LOC) Department FROM DEPT;</div></pre></td></tr></table></figure></p>
+<p>範例：<img src="concat.png" alt="">  </p>
+<p>排除重複資料列，使重複資料只出現一次→使用DISTINCT 欄位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT job FROM emp;</div></pre></td></tr></table></figure></p>
+<p>範例：<img src="distinct.png" alt=""><br><br></p>
+<h3 id="設定查詢條件"><a href="#設定查詢條件" class="headerlink" title="設定查詢條件"></a>設定查詢條件</h3><p><strong>WHERE 條件子句/<a href="../MySQL-比較運算子-邏輯運算子-SQL特定運算子">比較運算式/邏輯運算式/SQL特定運算式</a></strong><br>依查詢條件篩選符合條件的資料列<br><br></p>
+<h3 id="資料分組"><a href="#資料分組" class="headerlink" title="資料分組"></a>資料分組</h3><p><strong>GROUP BY 資料項</strong><br>將表格中的紀錄依資料項的相同內容分為一個群組，並以資料項為排序(ASC)的依據<br><br></p>
+<p><strong>HAVING</strong><br>設定條件來篩選回傳的分組資料<br><br></p>
+<h3 id="資料排序"><a href="#資料排序" class="headerlink" title="資料排序"></a>資料排序</h3><p><strong>ORDER BY 欄位/別名/運算式/位置 ASC(升冪，預設，可不打)/DESC(降冪)</strong>  </p>
+<ul>
+<li>依指定欄位或運算式的資料值來排序，可以使用多個資料項排序  </li>
+<li>若有空值時，ASC升冪在最前面，DESC降冪在最下面  </li>
+<li>位置→依資料項在list中的位置順序(起始數值：1)，若超出欄位總數會出現ERROR<br>範例：<img src="orderBy.png" alt=""><br><br></li>
+</ul>
+<p><strong>LIMIT offset, count</strong><br>設定查詢結果傳回的資料筆數，若只有一個整數→count<br>offset：傳回資料的開始位置，由0起算，&gt;=0；可以把它想成要略過筆數<br>count：傳回最大的資料筆數<br>範例：從位置3開始傳回5筆資料<img src="limit.png" alt=""><br><br></p>
+<h3 id="CASE運算式"><a href="#CASE運算式" class="headerlink" title="CASE運算式"></a>CASE運算式</h3><p><strong>列舉式CASE(Simple CASE)</strong><br>與一串列舉的值做比較，傳回第一個值相等的回傳值<br>若都不相等則傳回ELSE的回傳值，若無給定ELSE則傳回NULL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT 顯示的欄位, </div><div class="line">　　　　CASE 欄位</div><div class="line">　　　　　　　WHEN v1 THEN r1</div><div class="line">　　　　　　　⋯⋯</div><div class="line">　　　　　　　ELSE r</div><div class="line">　　　　END 新欄位名稱</div><div class="line">FROM 資料表</div></pre></td></tr></table></figure></p>
+<p>範例：<img src="simpleCASE.png" alt=""><br><br></p>
+<p><strong>條件式CASE(Searched CASE)</strong><br>與一串列舉的條件做比較，傳回第一個條件運算結果=TRUE的回傳值<br>若都不相等則傳回ELSE的回傳值，若無給定ELSE則傳回NULL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT 顯示的欄位, </div><div class="line">　　　　CASE </div><div class="line">　　　　　　　WHEN 條件 THEN r1</div><div class="line">　　　　　　　⋯⋯</div><div class="line">　　　　　　　ELSE r</div><div class="line">　　　　END 新欄位名稱</div><div class="line">FROM 資料表</div></pre></td></tr></table></figure></p>
+<p>範例：<img src="searchedCASE.png" alt=""><br><br></p>
+<p><em>資料來源：李志賢老師上課講義</em></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>追隨 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/yuna9068" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/08/22/MySQLNullValue/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            MySQL NULL VALUE空值
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/08/18/MySQLStatements/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">MySQL 命令</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLGeneralFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLGeneralFunctions/MySQLGeneralFunctions.jpg)" alt="MySQL 函數 5.通用函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLGeneralFunctions/" class="title">MySQL 函數 5.通用函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:31.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLConversionFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLConversionFunctions/convertAndCast.png)" alt="MySQL 函數 4.資料型態轉換函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLConversionFunctions/" class="title">MySQL 函數 4.資料型態轉換函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLDateAndTimeFunctions/MySQLDateAndTimeFunctions.jpg)" alt="MySQL 函數 3.日期/時間函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="title">MySQL 函數 3.日期/時間函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:00:37.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLNumericFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg)" alt="MySQL 函數 2.數值函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLNumericFunctions/" class="title">MySQL 函數 2.數值函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLStringFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg)" alt="MySQL 函數 1.字串函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLStringFunctions/" class="title">MySQL 函數 1.字串函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/臺北科大Java/" style="font-size: 10px;">臺北科大Java</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Yuna</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'code-wars';
+    
+    
+    var disqus_url = 'http://yuna9068.github.io/2017/08/22/MySQLSelect/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MySQL 函數 1.字串函數 | 程式大作戰</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="MySQL,臺北科大Java" />
+    
+    <meta name="description" content="函數 功能     ASCII(char) 將第一個字元轉成int   BIN()    BIT_LENGTH()    CHAR()    CHAR_LENGTH(str) 字元個數例：CHAR_LENGTH(‘程式AB12’) → 6   CHARACTER_LENGTH()    CONCAT(str1, str2, …) 字串連結   CONCAT_WS()    ELT()">
+<meta name="keywords" content="MySQL,臺北科大Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 函數 1.字串函數">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/24/MySQLStringFunctions/index.html">
+<meta property="og:site_name" content="程式大作戰">
+<meta property="og:description" content="函數 功能     ASCII(char) 將第一個字元轉成int   BIN()    BIT_LENGTH()    CHAR()    CHAR_LENGTH(str) 字元個數例：CHAR_LENGTH(‘程式AB12’) → 6   CHARACTER_LENGTH()    CONCAT(str1, str2, …) 字串連結   CONCAT_WS()    ELT()">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg">
+<meta property="og:updated_time" content="2017-08-25T09:18:51.571Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 函數 1.字串函數">
+<meta name="twitter:description" content="函數 功能     ASCII(char) 將第一個字元轉成int   BIN()    BIT_LENGTH()    CHAR()    CHAR_LENGTH(str) 字元個數例：CHAR_LENGTH(‘程式AB12’) → 6   CHARACTER_LENGTH()    CONCAT(str1, str2, …) 字串連結   CONCAT_WS()    ELT()">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/MySQL/">MySQL</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(休息,食記...)" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/MySQL/">MySQL</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-MySQLStringFunctions" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MySQL 函數 1.字串函數
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/24/MySQLStringFunctions/" class="article-date">
+            <time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/臺北科大Java/">臺北科大Java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg" alt="MySQL String Functions" title="MySQL String Functions">  
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函數</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ASCII(<em>char</em>)</td>
+<td style="text-align:left">將第一個字元轉成int</td>
+</tr>
+<tr>
+<td style="text-align:left">BIN()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">BIT_LENGTH()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CHAR()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CHAR_LENGTH(<em>str</em>)</td>
+<td style="text-align:left">字元個數<br>例：CHAR_LENGTH(‘程式AB12’) → 6</td>
+</tr>
+<tr>
+<td style="text-align:left">CHARACTER_LENGTH()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CONCAT(<em>str1, str2, …</em>)</td>
+<td style="text-align:left">字串連結</td>
+</tr>
+<tr>
+<td style="text-align:left">CONCAT_WS()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ELT()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">EXPORT_SET()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">FIELD(<em>str, str1, str2, …</em>)</td>
+<td style="text-align:left">傳回str在str list的位置，類似IN<br>SELECT deptno FROM emp WHERE FIELD(deptno,10,20); → 列出deptno值=10或20的資料<br>SELECT deptno FROM emp ORDER BY FIELD(deptno,20,10); → 依deptno排序，先20再10，非20或10的資料排在最上方</td>
+</tr>
+<tr>
+<td style="text-align:left">FIND_IN_SET()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">FORMAT()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">FROM_BASE64()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">HEX()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">INSERT(<em>str, pos, len, newstr</em>)</td>
+<td style="text-align:left">在指定區間插入一字串<br>例：INSERT(‘This is a test’, 4, 5, ‘at’) → Thiata test</td>
+</tr>
+<tr>
+<td style="text-align:left">INSTR(<em>str, substr</em>)</td>
+<td style="text-align:left">傳回指定字元在字串中出現的位置</td>
+</tr>
+<tr>
+<td style="text-align:left">LCASE(<em>str</em>)</td>
+<td style="text-align:left">將字串轉成小寫字母<br>在MySQL用的機會少，因指令不分大小寫</td>
+</tr>
+<tr>
+<td style="text-align:left">LEFT(<em>str, len</em>)</td>
+<td style="text-align:left">由左至右傳回指定字元數</td>
+</tr>
+<tr>
+<td style="text-align:left">LENGTH(<em>str</em>)</td>
+<td style="text-align:left">字串長度(byte)<br>例：LENGTH(‘程式AB12’) → 10</td>
+</tr>
+<tr>
+<td style="text-align:left">LIKE</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">LOAD_FILE()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">LOCATE(<em>substr, str[, pos]</em>)</td>
+<td style="text-align:left">傳回指定字元在字串中出現的位置</td>
+</tr>
+<tr>
+<td style="text-align:left">LOWER(<em>str</em>)</td>
+<td style="text-align:left">將字串轉成小寫字母<br>在MySQL用的機會少，因指令不分大小寫</td>
+</tr>
+<tr>
+<td style="text-align:left">LPAD(<em>str, len, padstr</em>)</td>
+<td style="text-align:left">將字串不足指定長度(len)以指定字元(padstr)向左補齊</td>
+</tr>
+<tr>
+<td style="text-align:left">LTRIM(<em>str</em>)</td>
+<td style="text-align:left">去除字串左邊空白字元</td>
+</tr>
+<tr>
+<td style="text-align:left">MAKE_SET()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">MATCH</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">MID()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">NOT LIKE</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">NOT REGEXP</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">OCT()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">OCTET_LENGTH()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ORD()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">POSITION()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">QUOTE()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">REGEXP</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">REPEAT(<em>str, count</em>)</td>
+<td style="text-align:left">將指定字串重複指定次數</td>
+</tr>
+<tr>
+<td style="text-align:left">REPLACE(<em>str, from_str, to_str</em>)</td>
+<td style="text-align:left">將新字串替代舊字串</td>
+</tr>
+<tr>
+<td style="text-align:left">REVERSE(<em>str</em>)</td>
+<td style="text-align:left">將字串反轉</td>
+</tr>
+<tr>
+<td style="text-align:left">RIGHT(<em>str, len</em>)</td>
+<td style="text-align:left">由右至左傳回指定字元數</td>
+</tr>
+<tr>
+<td style="text-align:left">RLIKE</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">RPAD(<em>str, len, padstr</em>)</td>
+<td style="text-align:left">將字串不足指定長度(len)以指定字元(padstr)向右補齊</td>
+</tr>
+<tr>
+<td style="text-align:left">RTRIM(<em>str</em>)</td>
+<td style="text-align:left">去除字串右邊空白字元</td>
+</tr>
+<tr>
+<td style="text-align:left">SOUNDEX()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">SOUNDS LIKE</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">SPACE(<em>N</em>)</td>
+<td style="text-align:left">將空白字元重複指定次數</td>
+</tr>
+<tr>
+<td style="text-align:left">STRCMP(<em>expr1, expr2</em>)</td>
+<td style="text-align:left">兩字串比較<br>expr1 = expr2 return 0<br>expr1 &gt; expr2 return 1<br>expr1 &lt; expr2 return -1</td>
+</tr>
+<tr>
+<td style="text-align:left">SUBSTR()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">SUBSTRING(<em>str, pos</em>)<br>SUBSTRING(<em>str</em> FROM <em>pos</em>)</td>
+<td style="text-align:left">擷取字串部分字元，從pos開始到最後一個</td>
+</tr>
+<tr>
+<td style="text-align:left">SUBSTRING(<em>str, pos, len</em>)<br>SUBSTRING(<em>str</em> FROM <em>pos</em> FOR <em>len</em>)</td>
+<td style="text-align:left">擷取字串部分字元，從pos開始擷取len個</td>
+</tr>
+<tr>
+<td style="text-align:left">SUBSTRING_INDEX()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">TO_BASE64()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">TRIM(<em>[{BOTH / LEADING / TRAILING} [remstr] FROM] str</em>)</td>
+<td style="text-align:left">去除字串 前後(BOTH)的remstr / 左邊(LEADING)的remstr / 右邊(TRAILING)的remstr<br>預設是BOTH，remstr沒寫的話是去除兩端空白字元</td>
+</tr>
+<tr>
+<td style="text-align:left">UCASE(<em>str</em>)</td>
+<td style="text-align:left">將字串轉成大寫字母<br>在MySQL用的機會少，因指令不分大小寫</td>
+</tr>
+<tr>
+<td style="text-align:left">UNHEX()</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">UPPER(<em>str</em>)</td>
+<td style="text-align:left">將字串轉成大寫字母<br>在MySQL用的機會少，因指令不分大小寫</td>
+</tr>
+<tr>
+<td style="text-align:left">WEIGHT_STRING()</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><em>資料來源：李志賢老師上課講義、<a href="https://dev.mysql.com/doc/refman/5.7/en/string-functions.html" target="_blank" rel="external">MySQL 5.7 Reference Manual / Functions and Operators / String Functions</a></em></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>追隨 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/yuna9068" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/08/24/MySQLNumericFunctions/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            MySQL 函數 2.數值函數
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/08/24/MySQLFunctions/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">MySQL 函數</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLGeneralFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLGeneralFunctions/MySQLGeneralFunctions.jpg)" alt="MySQL 函數 5.通用函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLGeneralFunctions/" class="title">MySQL 函數 5.通用函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:31.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLConversionFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLConversionFunctions/convertAndCast.png)" alt="MySQL 函數 4.資料型態轉換函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLConversionFunctions/" class="title">MySQL 函數 4.資料型態轉換函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLDateAndTimeFunctions/MySQLDateAndTimeFunctions.jpg)" alt="MySQL 函數 3.日期/時間函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="title">MySQL 函數 3.日期/時間函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:00:37.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLNumericFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg)" alt="MySQL 函數 2.數值函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLNumericFunctions/" class="title">MySQL 函數 2.數值函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/08/24/MySQLStringFunctions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg)" alt="MySQL 函數 1.字串函數" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLStringFunctions/" class="title">MySQL 函數 1.字串函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/臺北科大Java/" style="font-size: 10px;">臺北科大Java</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Yuna</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'code-wars';
+    
+    
+    var disqus_url = 'http://yuna9068.github.io/2017/08/24/MySQLStringFunctions/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

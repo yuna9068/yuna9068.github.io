@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>MySQL 命令 | 程式大作戰</title>
+    <title>MySQL 資料型態 | 程式大作戰</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="MySQL,臺北科大Java" />
     
-    <meta name="description" content="SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;  CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;  USE 資料庫名稱指定預設存取的資料庫1USE mydb;  SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql  SHO">
+    <meta name="description" content="基本資料型態◆文數字資料(Character Types)   類型 儲存方式 儲存大小 範圍     CHAR(N) 固定SIZE，不足部分以空白填入通常在CHAR(1)時使用 字元數 0~255   VARCHER(N) 變動SIZE一般都使用VARCHAR 字元數+1byte 0~255   TINYBLOBBLOBMEDIUMBLOBLONGBLOB Binary不分大小寫 L+1b">
 <meta name="keywords" content="MySQL,臺北科大Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 命令">
-<meta property="og:url" content="http://yuna9068.github.io/2017/08/18/MySQL-命令/index.html">
+<meta property="og:title" content="MySQL 資料型態">
+<meta property="og:url" content="http://yuna9068.github.io/2017/08/22/MySQLDataTypes/index.html">
 <meta property="og:site_name" content="程式大作戰">
-<meta property="og:description" content="SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;  CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;  USE 資料庫名稱指定預設存取的資料庫1USE mydb;  SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql  SHO">
+<meta property="og:description" content="基本資料型態◆文數字資料(Character Types)   類型 儲存方式 儲存大小 範圍     CHAR(N) 固定SIZE，不足部分以空白填入通常在CHAR(1)時使用 字元數 0~255   VARCHER(N) 變動SIZE一般都使用VARCHAR 字元數+1byte 0~255   TINYBLOBBLOBMEDIUMBLOBLONGBLOB Binary不分大小寫 L+1b">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="http://yuna9068.github.io/2017/08/18/MySQL-命令/MySQL.jpg">
-<meta property="og:updated_time" content="2017-08-22T16:13:48.690Z">
+<meta property="og:image" content="http://yuna9068.github.io/2017/08/22/MySQLDataTypes/MySQLDataTypes.jpg">
+<meta property="og:updated_time" content="2017-08-24T08:48:15.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 命令">
-<meta name="twitter:description" content="SHOW DATABASES查詢目前伺服器現存的所有資料庫1SHOW DATABASES;  CREATE DATABASE 資料庫名稱建立一個新的資料庫1CREATE DATABASE mydb;  USE 資料庫名稱指定預設存取的資料庫1USE mydb;  SOURCE 路徑\檔案名稱執行一個SQL命令檔，路徑不要有中文1SOURCE D:\mysql_demobld.sql  SHO">
-<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/18/MySQL-命令/MySQL.jpg">
+<meta name="twitter:title" content="MySQL 資料型態">
+<meta name="twitter:description" content="基本資料型態◆文數字資料(Character Types)   類型 儲存方式 儲存大小 範圍     CHAR(N) 固定SIZE，不足部分以空白填入通常在CHAR(1)時使用 字元數 0~255   VARCHER(N) 變動SIZE一般都使用VARCHAR 字元數+1byte 0~255   TINYBLOBBLOBMEDIUMBLOBLONGBLOB Binary不分大小寫 L+1b">
+<meta name="twitter:image" content="http://yuna9068.github.io/2017/08/22/MySQLDataTypes/MySQLDataTypes.jpg">
     
 
     
@@ -131,14 +131,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-MySQL-命令" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-MySQLDataTypes" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        MySQL 命令
+        MySQL 資料型態
         </h1>
     
 
@@ -148,8 +148,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/08/18/MySQL-命令/" class="article-date">
-            <time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time>
+        <a href="/2017/08/22/MySQLDataTypes/" class="article-date">
+            <time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time>
         </a>
     </div>
 
@@ -163,21 +163,170 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/2017/08/18/MySQL-命令/MySQL.jpg" alt="MySQL" title="MySQL">  
-<p><strong>SHOW DATABASES</strong><br>查詢目前伺服器現存的所有資料庫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SHOW DATABASES;</div></pre></td></tr></table></figure></p>
+            <img src="/2017/08/22/MySQLDataTypes/MySQLDataTypes.jpg" alt="MySQL Data Types" title="MySQL Data Types">  
+<h2 id="基本資料型態"><a href="#基本資料型態" class="headerlink" title="基本資料型態"></a>基本資料型態</h2><h3 id="◆文數字資料-Character-Types"><a href="#◆文數字資料-Character-Types" class="headerlink" title="◆文數字資料(Character Types)"></a>◆文數字資料(Character Types)</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">類型</th>
+<th style="text-align:left">儲存方式</th>
+<th style="text-align:left">儲存大小</th>
+<th style="text-align:left">範圍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CHAR(N)</td>
+<td style="text-align:left">固定SIZE，不足部分以空白填入<br>通常在CHAR(1)時使用</td>
+<td style="text-align:left">字元數</td>
+<td style="text-align:left">0~255</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>VARCHER(N)</strong></td>
+<td style="text-align:left">變動SIZE<br>一般都使用VARCHAR</td>
+<td style="text-align:left">字元數+1byte</td>
+<td style="text-align:left">0~255</td>
+</tr>
+<tr>
+<td style="text-align:left">TINYBLOB<br>BLOB<br>MEDIUMBLOB<br>LONGBLOB</td>
+<td style="text-align:left">Binary<br>不分大小寫</td>
+<td style="text-align:left">L+1bytes<br>L+2bytes<br>L+3bytes<br>L+4bytes</td>
+<td style="text-align:left">L &lt; 2^8<br>L &lt; 2^16<br>L &lt; 2^24<br>L &lt; 2^32</td>
+</tr>
+<tr>
+<td style="text-align:left">TINYTEXT<br>TEXT<br>MEDIUMTEXT<br>LONGTEXT</td>
+<td style="text-align:left">Character<br>分大小寫</td>
+<td style="text-align:left">L+1bytes<br>L+2bytes<br>L+3bytes<br>L+4bytes</td>
+<td style="text-align:left">L &lt; 2^8<br>L &lt; 2^16<br>L &lt; 2^24<br>L &lt; 2^32</td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
-<p><strong>CREATE DATABASE 資料庫名稱</strong><br>建立一個新的資料庫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE mydb;</div></pre></td></tr></table></figure></p>
+<h3 id="◆數值資料-Numeric-Types"><a href="#◆數值資料-Numeric-Types" class="headerlink" title="◆數值資料(Numeric Types)"></a>◆數值資料(Numeric Types)</h3><h6 id="整數-Integer"><a href="#整數-Integer" class="headerlink" title="整數(Integer)"></a>整數(Integer)</h6><table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Bytes</th>
+<th style="text-align:left">Minimum Value(Signed)</th>
+<th style="text-align:left">Maximum Value(Signed)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYINT</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">-128</td>
+<td style="text-align:left">127</td>
+</tr>
+<tr>
+<td style="text-align:left">SMALLINT</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">-32768</td>
+<td style="text-align:left">32767</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMINT</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">-8388608</td>
+<td style="text-align:left">8388607</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INT/INTEGER</strong></td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">-2147483648</td>
+<td style="text-align:left">2147483647</td>
+</tr>
+<tr>
+<td style="text-align:left">BIGINT</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">-9223372036854775808</td>
+<td style="text-align:left">9223372036854775807</td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
-<p><strong>USE 資料庫名稱</strong><br>指定預設存取的資料庫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">USE mydb;</div></pre></td></tr></table></figure></p>
-<p><br></p>
-<p><strong>SOURCE 路徑\檔案名稱</strong><br>執行一個SQL命令檔，路徑不要有中文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SOURCE D:\mysql_demobld.sql</div></pre></td></tr></table></figure></p>
-<p><br></p>
-<p><strong>SHOW TABLES</strong><br>列出預設資料庫中所有資料表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SHOW TABLES;</div></pre></td></tr></table></figure></p>
-<p><br></p>
-<p><strong>DESCRIBE 資料庫名稱 / DESC 資料庫名稱</strong><br>列出指定資料表的欄位資訊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DESC dept;</div></pre></td></tr></table></figure></p>
-<p><br></p>
-<p><strong>TEE 路徑\檔案名稱</strong><br>留存執行結果，存成文字檔，結束留存時輸入NOTEE<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TEE D:\hw01</div></pre></td></tr></table></figure></p>
-<p><br></p>
+<h6 id="精準實數-商業應用"><a href="#精準實數-商業應用" class="headerlink" title="精準實數 - 商業應用"></a>精準實數 - 商業應用</h6><p><strong>DECIMAL(p,s) / NUMERIC(p,s)</strong><br>p為精確位數，總長度p = 整數 + 小數s(沒s代表是整數) 預設值為10<br>範例：DECIMAL(5,2) 範圍 -999.99 ~ 999.99<br><br></p>
+<h6 id="逼近實數-科學計算"><a href="#逼近實數-科學計算" class="headerlink" title="逼近實數 - 科學計算"></a>逼近實數 - 科學計算</h6><p>FLOAT(p) / DOUBLE(p)<br>p為指定精確長度，決定儲存的大小<br>資料長度與有效範圍：單精確數 → 4bytes，p = 0 ~ 23；雙精確數 → 8bytes，p = 24 ~ 53<br><br></p>
+<hr>
+<h2 id="導出型資料型態"><a href="#導出型資料型態" class="headerlink" title="導出型資料型態"></a>導出型資料型態</h2><h3 id="◆日期-時間資料"><a href="#◆日期-時間資料" class="headerlink" title="◆日期/時間資料"></a>◆日期/時間資料</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">型態</th>
+<th style="text-align:left">格式</th>
+<th style="text-align:left">範圍</th>
+<th style="text-align:left">儲存大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>DATETIME</strong></td>
+<td style="text-align:left">YYYY-MM-DD HH:MM:SS</td>
+<td style="text-align:left">1000-01-01 00:00:00 ~ <br>9999-12-31 23:59:59</td>
+<td style="text-align:left">8 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">TIMESTAMP<br>(跨國用)</td>
+<td style="text-align:left">YYYY-MM-DD HH:MM:SS</td>
+<td style="text-align:left">1000-01-01 00:00:00 ~ <br>9999-12-31 23:59:59</td>
+<td style="text-align:left">4 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DATE</strong></td>
+<td style="text-align:left">YYYY-MM-DD</td>
+<td style="text-align:left">1000-01-01 ~ <br>9999-12-31</td>
+<td style="text-align:left">3 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">YEAR</td>
+<td style="text-align:left">YYYY</td>
+<td style="text-align:left">1901 ~ <br>2155</td>
+<td style="text-align:left">1 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">TIME</td>
+<td style="text-align:left">HH:MM:SS</td>
+<td style="text-align:left">-838:59:59 ~ <br>838:59:59</td>
+<td style="text-align:left">3 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>※若要存西元1000年前的日期，要使用文數字資料型態<br>※DATE、DATETIME、TIMESTAMP、YEAR → 紀錄時間點<br>※TIME → 紀錄時間區段  </p>
+<p><strong>DATETIME</strong>  </p>
+<ul>
+<li>可用一位數表示月，日，時，分，秒，例：1979-6-9 1:2:3 → 1979-06-09 01:02:03  </li>
+<li>若年為2位數時，00 ~ 69轉成2000 ~ 2069；70 ~ 69轉成1970 ~ 1999  </li>
+<li>DATE 轉 DATETIME、TIMESTAMP → 時間單位為00:00:00  </li>
+<li>DATETIME、TIMESTAMP 轉 DATE → 截斷時間單位  </li>
+<li>資料常值以字串型態輸入格式  </li>
+<li>- 或 : 符號可以改成其他任何符號，例： . / @ ^ + *  </li>
+<li>格式：  <ul>
+<li>‘YYYY-MM-DD HH:MM:SS’  </li>
+<li>‘YY-MM-DD HH:MM:SS’  </li>
+<li>‘YYYY-MM-DD’  </li>
+<li>‘YY-MM-DD’  </li>
+<li>YYYYMMDDHHMMSS  </li>
+<li>YYMMDDHHMMSS  </li>
+<li>YYYYMMDD  </li>
+<li>YYMMDD<br><br></li>
+</ul>
+</li>
+</ul>
+<p><strong>TIME</strong>  </p>
+<ul>
+<li>資料常值以字串型態輸入格式  </li>
+<li>D：0~34days (1D = 24hours)  </li>
+<li>所有無法自動轉換的字串，皆轉成00:00:00  </li>
+<li>格式：  <ul>
+<li>‘D HH:MM:SS.fraction’</li>
+<li>‘D HH:MM:SS’</li>
+<li>‘D HH:MM’</li>
+<li>‘D HH’</li>
+<li>‘HH:MM:SS.fraction’ 或 ‘HHMMSS.fraction’</li>
+<li>‘HH:MM:SS’ 或 ‘HHMMSS’</li>
+<li>‘HH:MM’ 或 ‘HHMM’</li>
+<li>‘SS’<br><br></li>
+</ul>
+</li>
+</ul>
 <p><em>資料來源：李志賢老師上課講義</em></p>
 
         </div>
@@ -276,20 +425,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/08/22/MySQL-SELECT資料查詢/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/08/24/MySQLFunctions/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            MySQL SELECT資料查詢
+            MySQL 函數
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2017/08/18/About-MySQL/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/08/22/MySQLOperators/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">About MySQL</p>
+        <p class="article-nav-title">MySQL 比較運算子/邏輯運算子/SQL特定運算子</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -308,10 +457,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-資料型態/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLGeneralFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-資料型態/MySQLDataTypes.jpg)" alt="MySQL 資料型態" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLGeneralFunctions/MySQLGeneralFunctions.jpg)" alt="MySQL 函數 5.通用函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -320,18 +469,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-資料型態/" class="title">MySQL 資料型態</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:38:05.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLGeneralFunctions/" class="title">MySQL 函數 5.通用函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:31.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLConversionFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/MySQLOperators.jpg)" alt="MySQL 比較運算子/邏輯運算子/SQL特定運算子" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLConversionFunctions/convertAndCast.png)" alt="MySQL 函數 4.資料型態轉換函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -340,18 +489,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-比較運算子-邏輯運算子-SQL特定運算子/" class="title">MySQL 比較運算子/邏輯運算子/SQL特定運算子</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:37:10.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLConversionFunctions/" class="title">MySQL 函數 4.資料型態轉換函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:01:12.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-NULL-VALUE空值/MySQLNullValue.jpg)" alt="MySQL NULL VALUE空值" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLDateAndTimeFunctions/MySQLDateAndTimeFunctions.jpg)" alt="MySQL 函數 3.日期/時間函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -360,18 +509,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-NULL-VALUE空值/" class="title">MySQL NULL VALUE空值</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T14:36:01.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLDateAndTimeFunctions/" class="title">MySQL 函數 3.日期/時間函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T10:00:37.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/22/MySQL-SELECT資料查詢/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLNumericFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/22/MySQL-SELECT資料查詢/MySQLSelect.jpg)" alt="MySQL SELECT資料查詢" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLNumericFunctions/MySQLNumericFunctions.jpg)" alt="MySQL 函數 2.數值函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -380,18 +529,18 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/22/MySQL-SELECT資料查詢/" class="title">MySQL SELECT資料查詢</a></p>
-                            <p class="item-date"><time datetime="2017-08-22T02:14:48.000Z" itemprop="datePublished">2017-08-22</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLNumericFunctions/" class="title">MySQL 函數 2.數值函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:52.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/08/18/MySQL-命令/" class="thumbnail">
+                            <a href="/2017/08/24/MySQLStringFunctions/" class="thumbnail">
     
     
-        <span style="background-image:url(/2017/08/18/MySQL-命令/MySQL.jpg)" alt="MySQL 命令" class="thumbnail-image"></span>
+        <span style="background-image:url(/2017/08/24/MySQLStringFunctions/MySQLStringFunctions.jpg)" alt="MySQL 函數 1.字串函數" class="thumbnail-image"></span>
     
     
 </a>
@@ -400,8 +549,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/MySQL/">MySQL</a></p>
-                            <p class="item-title"><a href="/2017/08/18/MySQL-命令/" class="title">MySQL 命令</a></p>
-                            <p class="item-date"><time datetime="2017-08-18T14:34:03.000Z" itemprop="datePublished">2017-08-18</time></p>
+                            <p class="item-title"><a href="/2017/08/24/MySQLStringFunctions/" class="title">MySQL 函數 1.字串函數</a></p>
+                            <p class="item-date"><time datetime="2017-08-24T09:59:29.000Z" itemprop="datePublished">2017-08-24</time></p>
                         </div>
                     </li>
                 
@@ -414,7 +563,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">6</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -424,7 +573,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">記錄</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">6</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -434,7 +583,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/臺北科大Java/">臺北科大Java</a><span class="tag-list-count">12</span></li></ul>
         </div>
     </div>
 
@@ -492,7 +641,7 @@
     var disqus_shortname = 'code-wars';
     
     
-    var disqus_url = 'http://yuna9068.github.io/2017/08/18/MySQL-命令/';
+    var disqus_url = 'http://yuna9068.github.io/2017/08/22/MySQLDataTypes/';
     
     (function() {
     var dsq = document.createElement('script');
